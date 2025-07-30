@@ -62,17 +62,30 @@ require("lazy").setup({
 	{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
-	{
-	  "max397574/better-escape.nvim",
-	  config = function()
-  	    require("better_escape").setup({
-  	    	mapping = {"jk"},
-  	    	timeout = vim.o.timeoutlen, -- the time in which the keys must be hit in ms. Use option timeoutlen by default
-    	    clear_empty_lines = false, -- clear line after escaping if there is only whitespace
-    	    keys = "<Esc>",
-  	    })
-  	  end
-	},
+    {
+      "max397574/better-escape.nvim",
+      event = "InsertEnter",
+      config = function()
+        require("better_escape").setup({
+          timeout = vim.o.timeoutlen,
+          default_mappings = true,
+          mappings = {
+            i = {
+              j = {
+                k = "<Esc>",
+                j = "<Esc>",
+              },
+            },
+            c = {
+              j = {
+                k = "<C-c>",
+                j = "<C-c>",
+              },
+            },
+          },
+        })
+      end,
+    },
 
 	{
 	    'numToStr/Comment.nvim',
