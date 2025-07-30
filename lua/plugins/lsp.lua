@@ -16,7 +16,9 @@ lspconfig.pyright.setup {
 	},	
 }
 
-lspconfig.tsserver.setup({})
+lspconfig.ts_ls.setup({
+  capabilities = require('cmp_nvim_lsp').default_capabilities(),
+})
 lspconfig.rust_analyzer.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
   settings = {
@@ -25,15 +27,15 @@ lspconfig.rust_analyzer.setup {
 }
 
 -- Setup Ruff Linter
-lspconfig.ruff_lsp.setup {
+lspconfig.ruff.setup {
+  capabilities = require('cmp_nvim_lsp').default_capabilities(),
   init_options = {
     settings = {
-      -- Any extra CLI arguments for `ruff` go here.
       args = {
-		"--select=E,F,UP,N,I,ASYNC,S,PTH",
-		"--line-length=79",
-		"--respect-gitignore",  -- Исключать из сканирования файлы в .gitignore
-      	"--target-version=py311"
+        "--select=E,F,UP,N,I,ASYNC,S,PTH",
+        "--line-length=79",
+        "--respect-gitignore",
+        "--target-version=py311"
       },
     }
   }
