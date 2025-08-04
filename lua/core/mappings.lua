@@ -24,3 +24,7 @@ vim.keymap.set('n', '<leader>nl', ':TodoTelescope<CR>')
 
 -- ToggleTerm
 vim.keymap.set('n', '<leader>s', ':ToggleTerm direction=float<CR>')
+
+-- PythonRunner
+vim.keymap.set('n', '<leader>pr', ':PythonRunner<CR>')         -- 🔁 Запуск Python-файла
+vim.keymap.set('n', '<leader>pt', ':PythonRunnerToggle<CR>')   -- 👁 Показать/скрыть терминал

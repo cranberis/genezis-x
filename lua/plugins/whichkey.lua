@@ -44,6 +44,13 @@ wk.register({
     c = {
         name = "Color Schemes",
         s = "Open"
+    },
+
+    
+    p = {
+        name = "Run Python File",
+        t = "Python Runner Toggle",
+        r = "Python Runner",
     }
 
 }, {prefix = "<leader>"})
