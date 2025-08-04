@@ -15,6 +15,8 @@ wk.register({
 		b = "Open Branches",
 		c = "Open Commits",
 		s = "Open Status",
+        h = "Git: File History",
+        d = "Git Diff: HEAD~1",
 	},
 
     e = {"Open Diagnostic Window"},

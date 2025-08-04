@@ -28,3 +28,7 @@ vim.keymap.set('n', '<leader>s', ':ToggleTerm direction=float<CR>')
 -- PythonRunner
 vim.keymap.set('n', '<leader>pr', ':PythonRunner<CR>')         -- 🔁 Запуск Python-файла
 vim.keymap.set('n', '<leader>pt', ':PythonRunnerToggle<CR>')   -- 👁 Показать/скрыть терминал
+
+-- 🔁 Diffview: сравнение и история коммитов
+vim.keymap.set("n", "<Leader>gd", "<Cmd>CompareWithLast<CR>", { desc = "Git Diff: HEAD~1" })
+vim.keymap.set("n", "<Leader>gh", "<Cmd>FileHistory<CR>", { desc = "Git: История файла" })

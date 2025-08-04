@@ -5,6 +5,7 @@ require('core.mappings')
 require('core.colors')
 require('core.configs')
 require('core.autocmds')
+require('core.commands')
 
 -- Plugins
 require('plugins.nvim-tree')
@@ -26,4 +27,4 @@ require('plugins.trouble')
 require('plugins.toggleterm')
 require('plugins.whichkey')
 require('plugins.mini')
-pcall(require, "plugins.python_runner")
+pcall(require, 'plugins.python_runner')

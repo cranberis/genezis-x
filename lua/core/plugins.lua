@@ -163,5 +163,16 @@ require("lazy").setup({
 	{ 'echasnovski/mini.nvim', version = false },
 	{ 'echasnovski/mini.move', version = false },
 	{ 'echasnovski/mini.pairs', version = false },
+    
+    {
+      "sindrets/diffview.nvim",
+      event = "VeryLazy",
+      dependencies = { "nvim-lua/plenary.nvim" },
+      config = function()
+        require("diffview").setup({
+          use_icons = true,
+        })
+      end,
+    },
 
 })
