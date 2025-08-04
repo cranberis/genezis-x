@@ -27,7 +27,33 @@ require("lazy").setup({
 
     {
 		'nvim-telescope/telescope.nvim', tag = '0.1.6',
-		dependencies = { 'nvim-lua/plenary.nvim' }
+		dependencies = { 'nvim-lua/plenary.nvim' },       
+        opts = function()
+          return {
+            pickers = {
+              git_commits = {
+                attach_mappings = function(_, map)
+                  local actions = require("telescope.actions")
+                  local action_state = require("telescope.actions.state")
+
+                  map("i", "<CR>", function(prompt_bufnr)
+                    local entry = action_state.get_selected_entry()
+                    actions.close(prompt_bufnr)
+                    vim.cmd("DiffviewOpen " .. entry.value)
+                  end)
+
+                  map("n", "<CR>", function(prompt_bufnr)
+                    local entry = action_state.get_selected_entry()
+                    actions.close(prompt_bufnr)
+                    vim.cmd("DiffviewOpen " .. entry.value)
+                  end)
+
+                  return true
+                end
+              }
+            }
+          }
+        end
 	},
 
 	{
