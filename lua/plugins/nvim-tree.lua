@@ -56,3 +56,5 @@ require('nvim-tree').setup({
   },
 })
 
+-- 🛠️ Настройка предпросмотра 
+require("core.preview").setup_nvimtree_preview()
